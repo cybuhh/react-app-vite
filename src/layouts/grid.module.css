@@ -1,0 +1,22 @@
+.main {
+  display: grid;
+  grid: 50px 1fr / 100px 1fr;
+}
+
+.header {
+  grid-column: 1 / 2;
+}
+
+.nav {
+  grid-column: 2 / 3;
+  display: flex;
+  gap: 10px;
+}
+
+.article {
+  grid-column: 1 / 3;
+}
+
+.h1 {
+  font-size: 12px;
+}
