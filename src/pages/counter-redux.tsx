@@ -1,16 +1,20 @@
 import reactLogo from '../assets/react.svg';
+import Loader from '../components/loader';
+import { increment, selectCount, selectStatus, incrementAsync } from '../features/counter-slice';
 import { useAppSelector, useAppDispatch } from '../hooks/use-redux';
-import { increment, selectCount, incrementAsync } from '../features/counter-slice';
 import styles from './index.module.css';
 import viteLogo from '/vite.svg';
 import classNames from 'classnames';
 
 export default function CounterRedux() {
   const count = useAppSelector(selectCount);
+  const status = useAppSelector(selectStatus);
   const dispatch = useAppDispatch();
 
   const handleOnClick = () => dispatch(increment());
   const handleOnClickAsync = () => dispatch(incrementAsync(1));
+
+  const asyncCounterValue = status === 'loading' ? <Loader /> : count;
 
   return (
     <section>
@@ -27,10 +31,10 @@ export default function CounterRedux() {
         <button className={styles['button']} onClick={handleOnClick}>
           count is {count}
         </button>
-        <br/>
-        <br/>
+        <br />
+        <br />
         <button className={styles['button']} onClick={handleOnClickAsync}>
-          count is {count} - async
+          count (async) is {asyncCounterValue}
         </button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
