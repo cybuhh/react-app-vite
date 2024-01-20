@@ -1,5 +1,4 @@
 // import useLocalStorage from '../hooks/useLocalStorage';
-import type { ThemeContextType } from '../@types/themeContext';
 import ThemeContext from '../components/themeContext';
 import styles from './grid.module.css';
 import Switch from '@mui/material/Switch';
@@ -9,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 export default function Grid() {
   // const [theme, setTheme] = useLocalStorage('theme', 'white');
-  const { theme, setTheme } = useContext(ThemeContext) as ThemeContextType;
+  const { theme, setTheme } = useContext(ThemeContext);
 
   const handleOnSwitchChange = useCallback(
     (_event: React.ChangeEvent<HTMLInputElement>, checked: boolean) => {
