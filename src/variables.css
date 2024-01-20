@@ -1,0 +1,9 @@
+:root {
+  --primary-color: #213547;
+  --primary-bg-color: #ffffff;
+
+  &.dark {
+    --primary-color: rgba(255, 255, 255, 0.87);
+    --primary-bg-color: #242424;
+  }
+}
