@@ -1,7 +1,7 @@
 import reactLogo from '../assets/react.svg';
 import Loader from '../components/loader';
 import { increment, selectCount, selectStatus, incrementAsync } from '../features/counter-slice';
-import { useAppSelector, useAppDispatch } from '../hooks/use-redux';
+import { useAppSelector, useAppDispatch } from '../hooks/useRedux';
 import styles from './index.module.css';
 import viteLogo from '/vite.svg';
 import classNames from 'classnames';

@@ -1,13 +1,22 @@
+// import useLocalStorage from '../hooks/useLocalStorage';
+import ThemeContext from '../components/themeContext';
+import type { ThemeContextType } from '../types';
 import styles from './grid.module.css';
 import Switch from '@mui/material/Switch';
-import { useCallback } from 'react';
+import { useCallback, useContext } from 'react';
 import { Outlet } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 export default function Grid() {
-  const handleOnSwitchChange = useCallback((_event: React.ChangeEvent<HTMLInputElement>, checked: boolean) => {
-    console.log('*** new switch event value', checked);
-  }, []);
+  // const [theme, setTheme] = useLocalStorage('theme', 'white');
+  const { theme, setTheme } = useContext(ThemeContext) as ThemeContextType;
+
+  const handleOnSwitchChange = useCallback(
+    (_event: React.ChangeEvent<HTMLInputElement>, checked: boolean) => {
+      setTheme(checked ? 'dark' : 'light');
+    },
+    [setTheme]
+  );
 
   return (
     <main className={styles['main']}>
@@ -17,7 +26,7 @@ export default function Grid() {
       <nav className={styles['nav']}>
         <Link to='/'>index</Link>
         <Link to='some-page'>some-page</Link>
-        <Switch onChange={handleOnSwitchChange} classes={{ root: styles['nav__switch'] }} />
+        <Switch checked={theme === 'dark'} onChange={handleOnSwitchChange} classes={{ root: styles['nav__switch'] }} />
       </nav>
       <article className={styles['article']}>
         <Outlet />
