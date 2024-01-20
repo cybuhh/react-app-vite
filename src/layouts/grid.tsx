@@ -29,6 +29,9 @@ export default function Grid() {
         <Link component={RouterLink} to='some-page'>
           some-page
         </Link>
+        <Link component={RouterLink} to='counter-redux'>
+          counter-redux
+        </Link>
         <Switch checked={theme === 'dark'} onChange={handleOnSwitchChange} classes={{ root: styles['nav__switch'] }} />
       </nav>
       <article className={styles['article']}>

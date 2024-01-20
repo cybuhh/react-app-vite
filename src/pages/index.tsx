@@ -1,8 +1,9 @@
-import { useState } from 'react';
 import reactLogo from '../assets/react.svg';
-import viteLogo from '/vite.svg';
 import styles from './index.module.css';
+import viteLogo from '/vite.svg';
+import Button from '@mui/material/Button';
 import classNames from 'classnames';
+import { useState } from 'react';
 
 export default function Index() {
   const [count, setCount] = useState(0);
@@ -20,9 +21,9 @@ export default function Index() {
       </div>
       <h1 className={styles['header']}>Vite + React</h1>
       <div>
-        <button className={styles['button']} onClick={handleOnClick}>
+        <Button variant='contained' onClick={handleOnClick}>
           count is {count}
-        </button>
+        </Button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>

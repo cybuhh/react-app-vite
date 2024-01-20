@@ -4,6 +4,7 @@ import { increment, selectCount, selectStatus, incrementAsync } from '../feature
 import { useAppSelector, useAppDispatch } from '../hooks/useRedux';
 import styles from './index.module.css';
 import viteLogo from '/vite.svg';
+import Button from '@mui/material/Button';
 import classNames from 'classnames';
 
 export default function CounterRedux() {
@@ -28,14 +29,14 @@ export default function CounterRedux() {
       </div>
       <h1 className={styles['header']}>Vite + React</h1>
       <div>
-        <button className={styles['button']} onClick={handleOnClick}>
+        <Button variant='contained' onClick={handleOnClick}>
           count is {count}
-        </button>
+        </Button>
         <br />
         <br />
-        <button className={styles['button']} onClick={handleOnClickAsync}>
+        <Button variant='contained' onClick={handleOnClickAsync}>
           count (async) is {asyncCounterValue}
-        </button>
+        </Button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
