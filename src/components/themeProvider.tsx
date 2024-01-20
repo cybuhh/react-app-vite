@@ -12,8 +12,8 @@ export default function Theme({ children }: Props) {
   const [localTheme, setLocalTheme] = useLocalStorage<string, ThemeType>('theme', prefersColorScheme);
 
   const setTheme = useCallback(
-    (newTheme: ThemeType) => {
-      setLocalTheme(newTheme);
+    (darkMode: boolean) => {
+      setLocalTheme(darkMode ? 'dark' : 'light');
     },
     [setLocalTheme]
   );

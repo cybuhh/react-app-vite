@@ -1,4 +1,4 @@
-import Theme from './components/theme';
+import ThemeProvider from './components/themeProvider';
 import './index.css';
 import router from './router';
 import { store } from './store';
@@ -10,9 +10,9 @@ import { RouterProvider } from 'react-router-dom';
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <Provider store={store}>
-      <Theme>
+      <ThemeProvider>
         <RouterProvider router={router} />
-      </Theme>
+      </ThemeProvider>
     </Provider>
   </React.StrictMode>
 );

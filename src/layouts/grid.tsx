@@ -7,12 +7,11 @@ import { Outlet } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 export default function Grid() {
-  // const [theme, setTheme] = useLocalStorage('theme', 'white');
   const { theme, setTheme } = useContext(ThemeContext);
 
   const handleOnSwitchChange = useCallback(
     (_event: React.ChangeEvent<HTMLInputElement>, checked: boolean) => {
-      setTheme(checked ? 'dark' : 'light');
+      setTheme(checked);
     },
     [setTheme]
   );
