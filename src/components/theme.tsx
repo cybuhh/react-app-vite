@@ -1,5 +1,5 @@
+import type { ThemeType } from '../@types/themeContext';
 import useLocalStorage from '../hooks/useLocalStorage';
-import type { ThemeType } from '../types';
 import ThemeContext from './themeContext';
 import { useEffect, useCallback } from 'react';
 

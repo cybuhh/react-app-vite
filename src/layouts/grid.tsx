@@ -1,6 +1,6 @@
 // import useLocalStorage from '../hooks/useLocalStorage';
+import type { ThemeContextType } from '../@types/themeContext';
 import ThemeContext from '../components/themeContext';
-import type { ThemeContextType } from '../types';
 import styles from './grid.module.css';
 import Switch from '@mui/material/Switch';
 import { useCallback, useContext } from 'react';
