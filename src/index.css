@@ -10,22 +10,18 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: var(--primary-color);
+  background-color: var(--primary-bg-color);
 }
-
-/*
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-}
-*/
 
 [data-theme='light'] {
-  color: #213547;
-  background-color: #ffffff;
+  --primary-color: #213547;
+  --primary-bg-color: #ffffff;
+}
+
+[data-theme='dark'] {
+  --primary-color: rgba(255, 255, 255, 0.87);
+  --primary-bg-color: #242424;
 }
 
 a {
