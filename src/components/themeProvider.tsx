@@ -19,7 +19,12 @@ export default function Theme({ children }: Props) {
   );
 
   useEffect(() => {
-    document.getElementsByTagName('html')[0].setAttribute('data-theme', localTheme);
+    const root = document.querySelector(':root');
+    if (localTheme === 'dark') {
+      root?.classList.add('dark');
+    } else {
+      root?.classList.remove('dark');
+    }
   }, [localTheme]);
 
   return <ThemeContext.Provider value={{ theme: localTheme, setTheme }}>{children}</ThemeContext.Provider>;
